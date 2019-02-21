@@ -1156,6 +1156,7 @@ body.fab_open .fixed-action-btn {z-index: 1150;}
 
 /*Featured Video*/
 .pt_featured_videos{position:relative;display: block; height:420px;margin: -5px auto 10px;overflow: hidden;}
+.pt_featured_videos .row{height:100%;}
 .pt_featured_videos .row a{font-weight: 500;}
 .pt_featured_videos .thumbnail_holder{position: relative;width: 100%;min-height: 420px;max-height: 420px;background: #d2d2d2;border-radius: 3px;}
 .pt_featured_videos .thumbnail_holder img{width: 100%;height: auto;position: absolute;top: 50%;right: 0;bottom: 0;left: 50%;display: block;margin: 0;opacity: 1;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);max-width: 100%;border-radius: 3px;min-width: 100%;min-height: 100%;}
