@@ -25,6 +25,42 @@ $pt->page_url_ = $pt->config->site_url;
 // }
 
 $limit = ($pt->theme_using == 'default') ? 10 : 4;
+
+$featured_list = '';
+
+$featued_data = $db->where('featured', '1')->where('privacy', 0)->orderBy('RAND()')->get(T_VIDEOS, 5);
+
+if (empty($featued_data)) {
+
+    $db->where('converted', '2','<>');
+    $featued_data = $db->where('privacy', 0)->orderBy('id', 'DESC')->get(T_VIDEOS, 5);
+}
+
+if (empty($featued_data)) {
+    $pt->content = PT_LoadPage('home/no-content');
+    return;
+}
+
+foreach ($featued_data as $key => $video) {
+    $video = PT_GetVideoByID($video, 0, 0, 0);
+    $featured_list .= PT_LoadPage('home/featuredVideo', array(
+        'ID' => $video->id,
+        'TITLE' => $video->title,
+        'DESC' => $video->markup_description,
+        'VIEWS' => $video->views,
+        'VIEWS_NUM' => number_format($video->views),
+        'USER_DATA' => $video->owner,
+        'THUMBNAIL' => $video->thumbnail,
+        'SUBSCIBE_BUTTON' => PT_GetSubscribeButton($video->owner->id),
+        'URL' => $video->url,
+        'TIME' => $video->time_ago,
+        'DURATION' => $video->duration,
+        'VIDEO_ID' => $video->video_id_,
+        'VIDEO_ID_' => PT_Slug($video->title, $video->video_id)
+    ));
+}
+
+
 $db->where('converted', '2','<>');
 $video_obj = $db->where('featured', '1')->where('privacy', 0)->orderBy('RAND()')->getOne(T_VIDEOS);
 $get_video = PT_GetVideoByID($video_obj, 0, 1, 0);
@@ -207,37 +243,7 @@ if (IS_LOGGED == true) {
     }
 }
 $pt->content = PT_LoadPage('home/content', array(
-    'ID' => $get_video->id,
-    'THUMBNAIL' => $get_video->thumbnail,
-    'DURATION' => $get_video->duration,
-    'TITLE' => $get_video->title,
-    'DESC' => $get_video->markup_description,
-    'URL' => $get_video->url,
-    'VIDEO_LOCATION_240' => $pt->video_240,
-    'VIDEO_LOCATION' => $get_video->video_location,
-    'VIDEO_LOCATION_480' => $pt->video_480,
-    'VIDEO_LOCATION_720' => $pt->video_720,
-    'VIDEO_TYPE' => $get_video->video_type,
-    'VIDEO_MAIN_ID' => $get_video->video_id,
-    'VIDEO_ID' => $get_video->video_id_,
-    'USER_DATA' => $user_data,
-    'SUBSCIBE_BUTTON' => PT_GetSubscribeButton($user_data->id),
-    'VIEWS' => $get_video->views,
-    'LIKES' => number_format($get_video->likes),
-    'DISLIKES' => number_format($get_video->dislikes),
-    'LIKES_P' => $get_video->likes_percent,
-    'DISLIKES_P' => $get_video->dislikes_percent,
-    'RAEL_LIKES' => $get_video->likes,
-    'RAEL_DISLIKES' => $get_video->dislikes,
-    'ISLIKED' => ($get_video->is_liked > 0) ? 'liked="true"' : '',
-    'ISDISLIKED' => ($get_video->is_disliked > 0) ? 'disliked="true"' : '',
-    'LIKE_ACTIVE_CLASS' => ($get_video->is_liked > 0) ? 'active' : '',
-    'DIS_ACTIVE_CLASS' => ($get_video->is_disliked > 0) ? 'active' : '', 
-    'SAVED_BUTTON' => $save_button,
-    'IS_SAVED' => ($is_saved > 0) ? 'saved="true"' : '',
-    'ENCODED_URL' => urlencode($get_video->url),
-    'CATEGORY' => $get_video->category_name,
-    'TIME' => $get_video->time_alpha,
+    'FEATURED_LIST' => $featured_list,
     'TRENDING_LIST' => $trending_list,
     'TOP_LIST' => $top_list,
     'LATEST_LIST' => $latest_list,
