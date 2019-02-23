@@ -995,7 +995,6 @@ a.plyr__control::before {
 	height: 100%;
 	margin: 0;
 	width: 100%;
-	position:fixed;
 }
 
 .plyr:-ms-fullscreen {
@@ -1004,7 +1003,6 @@ a.plyr__control::before {
 	height: 100%;
 	margin: 0;
 	width: 100%;
-	position:fixed;
 }
 
 .plyr:fullscreen {
@@ -1013,23 +1011,19 @@ a.plyr__control::before {
 	height: 100%;
 	margin: 0;
 	width: 100%;
-	position:relative;
 }
 
 .plyr:-webkit-full-screen video {
-	position: absolute;
 	height: 100%
 	width:100%;
 }
 
 .plyr:-ms-fullscreen video {
-	position: absolute;
 	height: 100%
 	width:100%;
 }
 
 .plyr:fullscreen video {
-	position: absolute;
 	height: 100%
 	width:100%;
 }
