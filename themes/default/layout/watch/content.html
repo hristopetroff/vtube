@@ -615,60 +615,9 @@
 <script type="text/javascript">
 
 <?php if ($pt->config->player_type == 'plyr' && empty($pt->get_video->youtube)) { ?>
-	const player = new Plyr('#my-video');
-	player.source = {
-		sources: [
-	    <?php if (!empty($pt->video_4096)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_4096}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 4096
-	            },
-	            <?php } ?>
-	            <?php if (!empty($pt->video_2048)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_2048}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 2048
-	            },
-	            <?php } ?>
-	            <?php if (!empty($pt->video_1080)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_1080}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 1080
-	            },
-	            <?php } ?>
-	            <?php if (!empty($pt->video_720)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_720}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 720
-	            },
-	            <?php } ?>
-	            <?php if (!empty($pt->video_480)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_480}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 480
-	            },
-	            <?php } ?>
-	            <?php if (!empty($pt->video_360)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_360}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 360
-	            },
-	            <?php } ?>
-	            <?php if (!empty($pt->video_240)) { ?>
-	            {
-	              src: '{{VIDEO_LOCATION_240}}',
-	              type: '{{VIDEO_TYPE}}',
-	              size: 240
-	            },
-	            <?php } ?>
-    ],
-	}
+	const player = new Plyr('#my-video', {
+	    /* options */
+	});
 <?php } else if ($pt->config->player_type == 'fluidPlayer' && empty($pt->get_video->youtube)) { ?>
 
    if ('{{VAST_URL}}' != '') {
