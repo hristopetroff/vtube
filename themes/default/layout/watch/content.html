@@ -57,7 +57,9 @@
 					<?php } else {  ?>
 						<video id="my-video<?php if ($pt->config->player_type == 'fluidPlayer') { ?>_<?php echo $pt->get_video->id; ?><?php } ?>"  controls
                         crossorigin
-                        playsinline  <?php if ($pt->config->player_type == 'videojs') { ?>   class="video-js" data-setup=''  <?php } ?> <?php if (empty($pt->ad_image)) { ?>  <?php } ?> style="width:100%; height:100%;position: relative;" poster="{{THUMBNAIL}}" >
+                        playsinline 
+                        autoplay 
+                        <?php if ($pt->config->player_type == 'videojs') { ?>   class="video-js" data-setup=''  <?php } ?> <?php if (empty($pt->ad_image)) { ?>  <?php } ?> style="width:100%; height:100%;position: relative;" poster="{{THUMBNAIL}}" >
 			               <?php if (!empty($pt->video_4096)) { ?>
 			               <source src="{{VIDEO_LOCATION_4096}}" type="{{VIDEO_TYPE}}" data-quality="4K" title='4K' label='4K' size='4096'>
 			               <?php } ?>
