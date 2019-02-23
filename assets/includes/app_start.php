@@ -1,8 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-// error_reporting(0);
-// @ini_set('max_execution_time', 0);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+error_reporting(0);
+@ini_set('max_execution_time', 0);
 if(file_exists("config_dev.php")){
     require 'config_dev.php';
 } else {
