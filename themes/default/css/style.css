@@ -1506,10 +1506,6 @@ select#type {width: 150px;}
 
 
 /*Responsive*/
-@media (min-width: 1300px){
-.container {
-    width: 1200px;
-}
 @media (min-width: 768px){
 .modal-sm {width: 380px;}
 }
