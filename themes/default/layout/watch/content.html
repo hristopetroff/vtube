@@ -622,9 +622,6 @@
 	const player = new Plyr('#my-video', {
 	    fullscreen: { enabled: true, fallback: true, iosNative: false },
 	});
-	player.on('loadeddata', event => {
-	    player.play();
-	});
 <?php } else if ($pt->config->player_type == 'fluidPlayer' && empty($pt->get_video->youtube)) { ?>
 
    if ('{{VAST_URL}}' != '') {
