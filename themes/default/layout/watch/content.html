@@ -615,8 +615,9 @@
 <script type="text/javascript">
 
 <?php if ($pt->config->player_type == 'plyr' && empty($pt->get_video->youtube)) { ?>
-	const player = new Plyr('#my-video', {
-	    sources: [
+	const player = new Plyr('#my-video');
+	player.source = {
+		sources: [
 	    <?php if (!empty($pt->video_4096)) { ?>
 	            {
 	              src: '{{VIDEO_LOCATION_4096}}',
@@ -667,7 +668,7 @@
 	            },
 	            <?php } ?>
     ],
-	});
+	}
 <?php } else if ($pt->config->player_type == 'fluidPlayer' && empty($pt->get_video->youtube)) { ?>
 
    if ('{{VAST_URL}}' != '') {
