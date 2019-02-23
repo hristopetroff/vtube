@@ -9,31 +9,16 @@ $pro_system      = ($pt->config->go_pro == 'on');
 
 $pt->page_url_ = $pt->config->site_url;
 
-// $home_top_videos = $db->where('privacy', 0)->orderby('views', 'DESC')->get(T_VIDEOS, 6);
-// $top_videos_html = '';
-
-// foreach ($home_top_videos as $key => $video) {
-//     $video = PT_GetVideoByID($video, 0, 0, 0);
-//     $top_videos_html .= PT_LoadPage('home/top-videos', array(
-//         'ID' => $video->id,
-//         'TITLE' => $video->title,
-//         'VIEWS' => $video->views,
-//         'USER_DATA' => $video->owner,
-//         'THUMBNAIL' => $video->thumbnail,
-//         'URL' => $video->url,
-//     ));
-// }
-
 $limit = ($pt->theme_using == 'default') ? 10 : 4;
 
 $featured_list = '';
 
-$featued_data = $db->where('featured', '1')->where('privacy', 0)->orderBy('RAND()')->get(T_VIDEOS, 5);
+$featued_data = $db->where('featured', '1')->where('privacy', 0)->orderBy('RAND()')->get(T_VIDEOS, 3);
 
 if (empty($featued_data)) {
 
     $db->where('converted', '2','<>');
-    $featued_data = $db->where('privacy', 0)->orderBy('id', 'DESC')->get(T_VIDEOS, 5);
+    $featued_data = $db->where('privacy', 0)->orderBy('id', 'DESC')->get(T_VIDEOS, 3);
 }
 
 if (empty($featued_data)) {
