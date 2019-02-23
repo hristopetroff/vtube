@@ -614,8 +614,11 @@
 <?php if (empty($pt->get_video->facebook) && empty($pt->get_video->vimeo) && empty($pt->get_video->daily) && ($pt->get_video->sell_video == 0 || $pt->get_video->is_owner || $pt->video_approved == false  || ($pt->get_video->sell_video > 0 && $pt->is_paid > 0))) { ?>
 <script type="text/javascript">
 
-
-<?php if ($pt->config->player_type == 'fluidPlayer' && empty($pt->get_video->youtube)) { ?>
+<?php if ($pt->config->player_type == 'plyr' && empty($pt->get_video->youtube)) { ?>
+	const player = new Plyr('#my-video_<?php echo $pt->get_video->id; ?>', {
+	    /* options */
+	});
+<?php } else if ($pt->config->player_type == 'fluidPlayer' && empty($pt->get_video->youtube)) { ?>
 
    if ('{{VAST_URL}}' != '') {
       myFluidPlayer = fluidPlayer(

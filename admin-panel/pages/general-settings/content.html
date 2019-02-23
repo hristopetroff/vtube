@@ -410,6 +410,7 @@ if (!isEnabled('shell_exec')) {
                             <option value="default" <?php echo ($pt->config->player_type == 'default') ? 'selected': '';?>>Default (This player support  Video Ads , Image Ads , Vast/Vpaid Ads )</option>
                             <option value="fluidPlayer" <?php echo ($pt->config->player_type == 'fluidPlayer') ? 'selected': '';?>>Fluid Player (This player support Vast/Vpaid Ads , Image Ads)</option>
                             <option value="videojs" <?php echo ($pt->config->player_type == 'videojs') ? 'selected': '';?>>Video js Player (This player support Video Ads , Image Ads)</option>
+                            <option value="plyr" <?php echo ($pt->config->player_type == 'plyr') ? 'selected': '';?>>Plyr Player (This player support Video Ads , Image Ads)</option>
                         </select>
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">Save</button>
                     </form>

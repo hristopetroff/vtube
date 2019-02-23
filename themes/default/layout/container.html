@@ -37,7 +37,10 @@
       <script src="{{CONFIG theme_url}}/player/js/fluidplayer/fluidplayer.min.js"></script>
       <link rel="stylesheet" href="{{CONFIG theme_url}}/player/css/mediaelementplayer.min.css" />
       <script src="{{CONFIG theme_url}}/player/js/mediaelement-and-player.min.js"></script>
-    <?php }elseif ($pt->config->player_type == 'videojs') { ?>
+    <?php } if ($pt->config->player_type == 'plyr') { ?>
+      <link rel="stylesheet" href="{{CONFIG theme_url}}/player/css/plyr/plyr.css" />
+      <script src="{{CONFIG theme_url}}/player/js/plyr/plyr.min.js"></script>
+    <?php } if ($pt->config->player_type == 'videojs') { ?>
     <script src="http://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
       <link href="{{CONFIG theme_url}}/player/css/video_js/video-js.css" rel="stylesheet">
       <link href="{{CONFIG theme_url}}/player/css/video_js/videojs-contrib-ads.min.css" rel="stylesheet">
