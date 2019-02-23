@@ -3,6 +3,8 @@
 *{outline:0 !important;}
 ::selection { background: rgba(166, 175, 189, 0.3);}
 
+.container {width: 100%;}
+
 .mejs-qualities-selected, .mejs__qualities-selected { color: #3F51B5 !important; }
 
 .videos-list .video-wrapper .video-views, .videos-list .video-wrapper .video-publisher { color: #777; margin-top: 3px; font-size: 11px; }
@@ -1532,7 +1534,6 @@ select#type {width: 150px;}
 }
 
 @media (max-width: 1360px) {
-.container {width: 850px;}
 .pt_featured_video .thumbnail_holder {min-height: 295px;max-height: 295px;}
 .pt_featured_video .video-player .video-title {height: 295px;}
 .pt_featured_video .video-player .video-big-title {max-height: 130px;font-size: 18px;}
