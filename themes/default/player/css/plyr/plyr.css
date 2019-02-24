@@ -1016,19 +1016,19 @@ a.plyr__control::before {
 .plyr:-webkit-full-screen video {
 	height: 100%
 	width:100%;
-	position: fixed;
+	position: absolute;
 }
 
 .plyr:-ms-fullscreen video {
 	height: 100%
 	width:100%;
-	position: fixed;
+	position: absolute;
 }
 
 .plyr:fullscreen video {
 	height: 100%
 	width:100%;
-	position: fixed;
+	position: absolute;
 }
 
 .plyr:-webkit-full-screen .plyr__video-wrapper {
