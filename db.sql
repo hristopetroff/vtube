@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `playtubefinal`
+-- Database: `vtubefinal`
 --
 
 -- --------------------------------------------------------
@@ -142,11 +142,11 @@ CREATE TABLE `config` (
 INSERT INTO `config` (`id`, `name`, `value`) VALUES
 (1, 'theme', 'default'),
 (2, 'censored_words', ''),
-(3, 'title', 'PlayTube'),
-(4, 'name', 'PlayTube'),
-(5, 'keyword', 'playtube,video sharing'),
-(6, 'email', 'deendoughouz@gmail.com'),
-(7, 'description', 'PlayTube is a PHP Video Sharing Script, PlayTube is the best way to start your own video sharing script!'),
+(3, 'title', 'vTube'),
+(4, 'name', 'vTube'),
+(5, 'keyword', 'vtube,video sharing'),
+(6, 'email', 'elemente365@gmail.com'),
+(7, 'description', 'vTube is a PHP Video Sharing Script, vTube is the best way to start your own video sharing script!'),
 (8, 'validation', 'off'),
 (9, 'recaptcha', 'off'),
 (10, 'recaptcha_key', ''),

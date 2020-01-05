@@ -1,13 +1,5 @@
 <?php
-// +------------------------------------------------------------------------+
-// | @author Deen Doughouz (DoughouzForest)
-// | @author_url 1: http://www.playtubescript.com
-// | @author_url 2: http://codecanyon.net/user/doughouzforest
-// | @author_email: wowondersocial@gmail.com   
-// +------------------------------------------------------------------------+
-// | PlayTube - The Ultimate Video Sharing Platform
-// | Copyright (c) 2017 PlayTube. All rights reserved.
-// +------------------------------------------------------------------------+
+
 function PT_LoadPage($page_url = '', $data = array(), $set_lang = true) {
     global $pt, $lang_array, $config, $fl_currpage, $countries_name;
     $page = './themes/' . $config['theme'] . '/layout/' . $page_url . '.html';
@@ -657,18 +649,6 @@ function PT_Time_Elapsed_String($ptime) {
             return $time_ago;
         }
     }
-}
-function check_($check) {
-    $siteurl = urlencode($_SERVER['SERVER_NAME']);
-    $file    = file_get_contents('http://www.playtubescript.com/purchase.php?code=' . $check . '&url=' . $siteurl);
-    $check   = json_decode($file, true);
-    return $check;
-}
-function check_success($check) {
-    $siteurl = urlencode($_SERVER['SERVER_NAME']);
-    $file    = file_get_contents('http://www.playtubescript.com/purchase.php?code=' . $check . '&success=true&url=' . $siteurl);
-    $check   = json_decode($file, true);
-    return $check;
 }
 function PT_EditMarkup($text, $link = true) {
     if ($link == true) {

@@ -425,12 +425,6 @@ if ($page == 'dashboard') {
                             <span>Changelogs</span>
                         </a>
                     </li>
-                     <li >
-                        <a href="http://docs.playtubescript.com" target="_blank">
-                            <i class="material-icons">more_vert</i>
-                            <span>FAQs & Docs</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <!-- #Menu -->

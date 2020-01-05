@@ -1,7 +1,7 @@
 {
-  "name": "playtube",
+  "name": "vtube",
   "version": "1.3.1",
-  "description": "PlayTube - The Ultimate PHP Video CMS & Video Sharing Platform",
+  "description": "VTube - The Ultimate PHP Video CMS & Video Sharing Platform",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -35,7 +35,7 @@
     "youtube",
     "plugins"
   ],
-  "author": "DoughouzForest (Deen Doughouz)",
+  "author": "Hristo Petrov (Praetorian)",
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.0",
